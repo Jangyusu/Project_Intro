@@ -14,17 +14,14 @@
     }
 
     function page($url) { //$url로 이동
-        echo
-        "<script>
-            location.href=\"$url\";
-        </script>";
+        echo "<script>location.href=\"$url\";</script>";
     }
 
     function back($msg) { //이전 페이지로 이동
-        echo
-        "<script>
-            alert(\"$msg\");
-            history.back();
-        </script>";
+        echo "<script>alert(\"$msg\");history.back();</script>";
+    }
+
+    function fun($name) { //함수 호출
+        echo "<script>{$name}</script>";
     }
 ?>

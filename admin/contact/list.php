@@ -1,5 +1,10 @@
 <?
-    include_once $_SERVER['DOCUMENT_ROOT']."/admin/admin_check.php"; //admin_check.php 불러오기
+    include_once $_SERVER['DOCUMENT_ROOT']."/admin/head.php"; //head.php 불러오기
+?>
 
-    $session = $_SESSION["id"]; //사용자 id
+<!--리스트-->
+<a href="request.php" class="btn">Contact</a>
+
+<?
+    include_once $_SERVER['DOCUMENT_ROOT']."/admin/foot.php"; //foot.php 불러오기
 ?>

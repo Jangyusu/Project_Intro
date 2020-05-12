@@ -17,7 +17,7 @@
         <?=$session?>님 환영합니다.
         <a href="/admin/logout.php">[로그아웃]</a>
         <nav>
-            <a href="work/list.php">Portfolio</a>
-            <a href="contact/list.php">Contact</a>
+            <a href="/admin/work/list.php">Portfolio</a>
+            <a href="/admin/contact/list.php">Contact</a>
         </nav>
     </header>
