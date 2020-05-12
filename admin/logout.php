@@ -1,17 +1,6 @@
 <?
-    //db.php (assets/inc/db.php)
-    session_start();
-    
-    $host = 'localhost';
-    $db_user = 'root'; 
-    $db_password = '';
-    $db_name = 'dbtnss'; //user DB
+    include_once $_SERVER['DOCUMENT_ROOT']."/asset/inc/db.php"; //db.php 불러오기
 
-    $dbcon = new mysqli($host, $db_user, $db_password, $db_name);
-
-    function mq($sql)
-    {
-        global $dbcon;
-        return $dbcon->query($sql);
-    }
+    session_destroy();
+    back("로그아웃 되었습니다.");
 ?>

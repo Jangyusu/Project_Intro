@@ -1,0 +1,43 @@
+html, body {
+    margin: 0;
+}
+
+h2 {}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+* {
+    box-sizing: border-box;
+}
+.w100 {width: 100%;}
+.btn {
+    background: #000 !important;
+    color:#fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 50px !important;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.request {
+    width: 80%;
+    margin: 0 auto;
+}
+.request ul {}
+.request ul li {
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+}
+.request ul li input {
+    border: 1px solid #aaa;
+    padding: 10px;
+    width: 100%;
+    background: #f3f3f3;
+}
+.request ul li textarea {
+    width: 100%;
+    height: 400px;
+}

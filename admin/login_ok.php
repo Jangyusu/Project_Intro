@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Chase Portfolio</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="asset/css/main.css" type=text/css rel=stylesheet>
-</head>
-<body>
-    <form action="login_ok.php" method="post">
-        <input type="text" name="id">
-        <input type="password" name="pw">
-        <input type="submit" value="Login">
-    </form>
-</body>
-</html>
+<?
+    include_once $_SERVER['DOCUMENT_ROOT']."/asset/inc/db.php"; //db.php 불러오기
+    
+    $id = $_POST["id"];
+    $pw = $_POST["pw"];
+    
+    if($id==="admin" && $pw==="1234") {
+        $_SESSION["id"] = $id;
+
+        page('/admin/index.php');
+    } else {
+        back('관리자가 아닙니다.');
+    }
+?>
