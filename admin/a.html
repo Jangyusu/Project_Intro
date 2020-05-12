@@ -9,23 +9,27 @@
 
 <body>
     <script>
-        var a = 1;
-        var arr = [4, 1, 2];
-        var arr2 = [];
+        var n1 = 50,
+            n2 = n1,
+            a = 0,
+            bool = true;
 
-        while (a > 3) {
-            arr2.unshift(arr[a % 3]);
-            if (a % 3 == 0) {
-                a = (Math.floor(a / 3)) - 1;
-            } else {
-                a = Math.floor(a / 3);
+        while (bool) {
+            a++;
+            n3 = n1.toString(2).match(/1/g).length;
+            n4 = (n1 + a).toString(2).match(/1/g).length;
+
+            if (n3 == n4) {
+                n2 = n1 + a;
+                bool = false;
             }
         }
 
-        arr2.unshift(arr[a % 3]);
+        console.log(n3);
+        console.log(n4);
+        console.log(n1);
+        console.log(n2);
 
-
-        console.log(arr2.toString().replace(",", ""));
     </script>
 </body>
 
