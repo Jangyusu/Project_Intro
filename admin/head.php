@@ -7,9 +7,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chase Portfolio</title>
+    <title>dbtn Portfolio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="/asset/css/admin_style.css" type=text/css rel=stylesheet>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/asset/js/admin_common.js"></script>
 </head>
 <body>

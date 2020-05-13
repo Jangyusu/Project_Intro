@@ -1,4 +1,5 @@
 <?
+    //db.php (assets/inc/db.php)
     session_start();
     
     $host = 'localhost';
@@ -8,20 +9,24 @@
 
     $dbcon = new mysqli($host, $db_user, $db_password, $db_name);
 
-    function mq($sql) {
+    function mq($sql)
+    {
         global $dbcon;
         return $dbcon->query($sql);
     }
 
-    function page($url) { //$url로 이동
+    function page($url){
         echo "<script>location.href=\"$url\";</script>";
     }
 
-    function back($msg) { //이전 페이지로 이동
+    function back($msg){
         echo "<script>alert(\"$msg\");history.back();</script>";
     }
 
-    function fun($name) { //함수 호출
+    function fun($name){
         echo "<script>{$name}</script>";
     }
+
+
+
 ?>

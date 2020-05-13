@@ -1,35 +1,53 @@
-<?
-    include_once $_SERVER['DOCUMENT_ROOT']."/admin/head.php"; //head.php 불러오기
+<? 
+    include_once $_SERVER['DOCUMENT_ROOT']."/admin/head.php";
+
+    $query = "select * from project";
+    $result = mq($query);
+    $row = mysqli_fetch_array($result);
+
+    include_once $_SERVER["DOCUMENT_ROOT"]."/asset/inc/page_var.php";
 ?>
 
 <!--리스트-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <article class="work_list">
     <h2>프로젝트 리스트</h2>
     <ul>
+        <?
+            $query = "select * from project order by num desc limit $start_num, $block_ct";
+            $result = mq($query);
+            while($row = mysqli_fetch_array($result)){
+        ?>
         <li>
+            <!--num, img, title, date, state-->
             <input type="checkbox">
-            <a href="#">
-                <code>num</code>
-                <img src="/admin/upload/thum/photo02.jpg" alt="">
-                <code>title</code>
-                <code>date</code>
-                <code>state</code>
+            <a data-num="<?=$row['num']?>" class="view">
+                <code><?=$row['num']?></code>
+                <img src="<?=$row['upload']?>">
+                <code><?=$row['title']?></code>
+                <code><?=$row['date']?></code>
+                <code><?=$row['state']?></code>
             </a>
-            <a href="#">[수정]</a>
-            <a href="#">[삭제]</a>
+            
+            <a href="modify.php?num=<?=$row['num']?>" class="edit">[수정]</a>
+            
+            <a data-num="<?=$row['num']?>" class="del">[삭제]</a>
         </li>
+        <? } ?>
     </ul>
     <div class="page">
-        <a href="#">&lt;</a>
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">&gt;</a>        
+    <?
+        include_once $_SERVER["DOCUMENT_ROOT"]."/asset/inc/paging.php";
+    ?>  
     </div>
     <a href="request.php" class="btn">프로젝트 등록</a>
 </article>
 
-<?
-    include_once $_SERVER['DOCUMENT_ROOT']."/admin/foot.php"; //foot.php 불러오기
+<div class="pop"></div>
+
+
+<? 
+    fun('workList()');
+    include_once $_SERVER['DOCUMENT_ROOT']."/admin/foot.php";
 ?>

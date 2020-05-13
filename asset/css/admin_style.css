@@ -51,7 +51,6 @@ ul, li {
 .work_list ul li {
     border-top: 1px solid #ddd;
     padding: 20px 0;
-    font-size: 0;
 }
 .work_list ul li a:nth-of-type(1) {
     font-size: 0;
@@ -87,4 +86,10 @@ ul, li {
 .page a.active {
     color: #f00;
     background: #eee;
+}
+
+/*contact*/
+.contents{
+    background:#eee;
+    padding:30px;
 }
